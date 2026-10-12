@@ -1,0 +1,357 @@
+{
+    "descriptions": [
+		{
+        "dataType": "func",
+        "modalityLabel": "bold",
+        "customLabels": "task-stressBase_echo-1",
+        "criteria": {
+            "SeriesDescription": "*func_task-stressBase*",
+			"MultibandAccelerationFactor": 4,
+			"EchoNumber":1
+            },
+        "sidecar_changes": {
+            "TaskName": "stressBase"
+            }
+        },
+        {
+        "dataType": "func",
+        "modalityLabel": "sbref",
+        "customLabels": "task-stressBase_echo-1",
+        "criteria": {
+            "SeriesDescription": "*SBR*",
+			"EchoNumber":1,
+			"ProtocolName":"*func_task-stressBase*"
+            },
+        "sidecar_changes": {
+            "TaskName": "stressBase"
+            }
+        },
+        {
+        "dataType": "func",
+        "modalityLabel": "bold",
+        "customLabels": "task-stressBase_echo-2",
+        "criteria": {
+            "SeriesDescription": "*func_task-stressBase*",
+			"MultibandAccelerationFactor": 4,
+			"EchoNumber":2
+            },
+        "sidecar_changes": {
+            "TaskName": "stressBase"
+            }
+        },
+        {
+        "dataType": "func",
+        "modalityLabel": "bold",
+        "customLabels": "task-stressBase_echo-3",
+        "criteria": {
+            "SeriesDescription": "*func_task-stressBase*",
+			"MultibandAccelerationFactor": 4,
+			"EchoNumber":3
+            },
+        "sidecar_changes": {
+            "TaskName": "stressBase"
+            }
+        },
+		{
+        "dataType": "func",
+        "modalityLabel": "bold",
+        "customLabels": "task-stress1_echo-1",
+        "criteria": {
+            "SeriesDescription": "*func_task-stress_run-01*",
+			"MultibandAccelerationFactor": 4,
+			"EchoNumber":1
+            },
+        "sidecar_changes": {
+            "TaskName": "stress1"
+            }
+        },
+        {
+        "dataType": "func",
+        "modalityLabel": "sbref",
+        "customLabels": "task-stress1_echo-1",
+        "criteria": {
+            "SeriesDescription": "*SBR*",
+			"EchoNumber":1,
+			"ProtocolName":"*func_task-stress_run-01*"
+            },
+        "sidecar_changes": {
+            "TaskName": "stress1"
+            }
+        },
+        {
+        "dataType": "func",
+        "modalityLabel": "bold",
+        "customLabels": "task-stress1_echo-2",
+        "criteria": {
+            "SeriesDescription": "*func_task-stress_run-01*",
+			"MultibandAccelerationFactor": 4,
+			"EchoNumber":2
+            },
+        "sidecar_changes": {
+            "TaskName": "stress1"
+            }
+        },
+        {
+        "dataType": "func",
+        "modalityLabel": "bold",
+        "customLabels": "task-stress1_echo-3",
+        "criteria": {
+            "SeriesDescription": "*func_task-stress_run-01*",
+			"MultibandAccelerationFactor": 4,
+			"EchoNumber":3
+            },
+        "sidecar_changes": {
+            "TaskName": "stress1"
+            }
+        },
+        {
+        "dataType": "func",
+        "modalityLabel": "bold",
+        "customLabels": "task-stress2_echo-1",
+        "criteria": {
+            "SeriesDescription": "*func_task-stress_run-02*",
+			"MultibandAccelerationFactor": 4,
+			"EchoNumber":1
+            },
+        "sidecar_changes": {
+            "TaskName": "stress2"
+            }
+        },
+        {
+        "dataType": "func",
+        "modalityLabel": "sbref",
+        "customLabels": "task-stress2_echo-1",
+        "criteria": {
+            "SeriesDescription": "*SBR*",
+			"EchoNumber":1,
+			"ProtocolName":"*func_task-stress_run-02*"
+            },
+        "sidecar_changes": {
+            "TaskName": "stress2"
+            }
+        },
+        {
+        "dataType": "func",
+        "modalityLabel": "bold",
+        "customLabels": "task-stress2_echo-2",
+        "criteria": {
+            "SeriesDescription": "*func_task-stress_run-02*",
+			"MultibandAccelerationFactor": 4,
+			"EchoNumber":2
+            },
+        "sidecar_changes": {
+            "TaskName": "stress2"
+            }
+        },
+        {
+        "dataType": "func",
+        "modalityLabel": "bold",
+        "customLabels": "task-stress2_echo-3",
+        "criteria": {
+            "SeriesDescription": "*func_task-stress_run-02*",
+			"MultibandAccelerationFactor": 4,
+			"EchoNumber":3
+            },
+        "sidecar_changes": {
+            "TaskName": "stress2"
+            }
+        },
+        {
+        "dataType": "func",
+        "modalityLabel": "bold",
+        "customLabels": "task-stress3_echo-1",
+        "criteria": {
+            "SeriesDescription": "*func_task-stress_run-03*",
+			"MultibandAccelerationFactor": 4,
+			"EchoNumber":1
+            },
+        "sidecar_changes": {
+            "TaskName": "stress3"
+            }
+        },
+        {
+        "dataType": "func",
+        "modalityLabel": "sbref",
+        "customLabels": "task-stress3_echo-1",
+        "criteria": {
+            "SeriesDescription": "*SBR*",
+			"EchoNumber":1,
+			"ProtocolName":"*func_task-stress_run-03*"
+            },
+        "sidecar_changes": {
+            "TaskName": "stress3"
+            }
+        },
+        {
+        "dataType": "func",
+        "modalityLabel": "bold",
+        "customLabels": "task-stress3_echo-2",
+        "criteria": {
+            "SeriesDescription": "*func_task-stress_run-03*",
+			"MultibandAccelerationFactor": 4,
+			"EchoNumber":2
+            },
+        "sidecar_changes": {
+            "TaskName": "stress3"
+            }
+        },
+        {
+        "dataType": "func",
+        "modalityLabel": "bold",
+        "customLabels": "task-stress3_echo-3",
+        "criteria": {
+            "SeriesDescription": "*func_task-stress_run-03*",
+			"MultibandAccelerationFactor": 4,
+			"EchoNumber":3
+            },
+        "sidecar_changes": {
+            "TaskName": "stress3"
+            }
+        },
+        {
+        "dataType": "func",
+        "modalityLabel": "bold",
+        "customLabels": "task-muskid_echo-1",
+        "criteria": {
+            "SeriesDescription": "*func_task-muskid*",
+            "EchoNumber": 1,
+			"MultibandAccelerationFactor": 4
+            },
+        "sidecar_changes": {
+            "TaskName": "muskid"
+            }
+        },
+        {
+        "dataType": "func",
+        "modalityLabel": "sbref",
+        "customLabels": "task-muskid_echo-1",
+        "criteria": {
+            "SeriesDescription": "*SBR*",
+            "EchoNumber": 1,
+            "ProtocolName":"*func_task-muskid*"
+            },
+        "sidecar_changes": {
+            "TaskName": "muskid"
+            }
+        },
+        {
+        "dataType": "func",
+        "modalityLabel": "bold",
+        "customLabels": "task-muskid_echo-2",
+        "criteria": {
+            "SeriesDescription": "*func_task-muskid*",
+            "EchoNumber": 2,
+			"MultibandAccelerationFactor": 4
+            },
+        "sidecar_changes": {
+            "TaskName": "muskid"
+            }
+        },
+         {
+        "dataType": "func",
+        "modalityLabel": "bold",
+        "customLabels": "task-muskid_echo-3",
+        "criteria": {
+            "SeriesDescription": "*func_task-muskid*",
+            "EchoNumber": 3,
+			"MultibandAccelerationFactor": 4
+            },
+        "sidecar_changes": {
+            "TaskName": "muskid"
+            }
+        },
+        {
+        "dataType": "dwi",
+        "modalityLabel": "dwi",
+        "criteria": {
+            "SeriesDescription": "dwi_acq-cmrr64dir2X2X2",
+            "SidecarFilename": "*dwi_acq-cmrr64*"
+            }
+	    },
+	    {
+        "dataType": "fmap",
+        "modalityLabel": "epi",
+        "customLabels": "dir-PA",
+        "IntendedFor": [0,1,2,3,16,17,18,19],
+        "criteria": {
+			"SeriesDescription":"fmap_run-01_acq-4x2me3res2p4_dir-PA"
+            }
+        },
+        {
+        "dataType": "fmap",
+        "modalityLabel": "epi",
+        "customLabels": "dir-AP",
+        "IntendedFor": [0,1,2,3,16,17,18,19],
+        "criteria": {
+			"SeriesDescription":"fmap_run-01_acq-4x2me3res2p4_dir-AP"
+            }
+        },
+        {
+        "dataType": "fmap",
+        "modalityLabel": "epi",
+        "customLabels": "dir-PA",
+        "IntendedFor": [4,5,6,7,8,9,10,11,12,13,14,15],
+        "criteria": {
+			"SeriesDescription":"fmap_run-02_acq-4x2me3res2p4_dir-PA"
+            }
+        },
+        {
+        "dataType": "fmap",
+        "modalityLabel": "epi",
+        "customLabels": "dir-AP",
+        "IntendedFor": [4,5,6,7,8,9,10,11,12,13,14,15],
+        "criteria": {
+			"SeriesDescription":"fmap_run-02_acq-4x2me3res2p4_dir-AP"
+            }
+        },
+        {
+        "dataType": "fmap",
+        "modalityLabel": "epi",
+        "customLabels": "dir-PA",
+        "IntendedFor": [20],
+        "criteria": {
+			"SeriesDescription": "fmap_run-01_acq-cmrr64dir2x2x2_dir-PA"
+            }
+        },
+        {
+        "dataType": "fmap",
+        "modalityLabel": "epi",
+        "customLabels": "dir-AP",
+        "IntendedFor": [20],
+        "criteria": {
+			"SeriesDescription": "fmap_run-01_acq-cmrr64dir2x2x2_dir-AP"
+            }
+        },
+        {
+        "dataType": "anat",
+        "modalityLabel": "T1w",
+        "criteria": {
+            "SeriesDescription": "*T1w*"
+            }
+        },
+        {
+        "dataType": "anat",
+        "modalityLabel": "echo-1_T2w",
+        "criteria": {
+            "SeriesDescription": "*T2w*",
+            "EchoNumber":1
+            }
+        },
+        {
+        "dataType": "anat",
+        "modalityLabel": "echo-2_T2w",
+        "criteria": {
+            "SeriesDescription": "*T2w*",
+            "EchoNumber":2
+            }
+        },
+                {
+        "dataType": "anat",
+        "modalityLabel": "echo-3_T2w",
+        "criteria": {
+            "SeriesDescription": "*T2w*",
+            "EchoNumber":3
+            }
+        }
+    ]
+}
