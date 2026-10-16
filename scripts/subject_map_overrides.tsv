@@ -1,0 +1,6 @@
+dicom_folder	action	note		
+Group A/Year 1/CONTROL A/6757AD-RL	CONTROL10	confirmed from records		
+Group A/Year 1/CONTROL A/6783AD-RL	CONTROL9	"CONTROL09-RL, dropped after Year 1Group A/Year 1/MUSIC A/6372AD-GG"	exclude	resent copy has same scans without duplicate DICOM folder
+Group B/Year 7/Sport/SPORT108-IM_OLD	exclude	outdated copy		
+Group A/Year 1/MUSIC A/6372AD-GG	exclude	resent copy has same scans without duplicate DICOM folder		
+Group A/Year 1/MUSIC A/6464AD-NR	exclude	original lacks field map; resent copy is complete		

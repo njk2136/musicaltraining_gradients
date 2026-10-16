@@ -1,0 +1,62 @@
+{
+    "descriptions": [
+        {
+            "datatype": "anat",
+            "suffix": "T1w",
+            "criteria": {
+                "SeriesDescription": "*MPRAGE*"
+            }
+        },
+        {
+            "id": "rest",
+            "datatype": "func",
+            "suffix": "bold",
+            "custom_entities": "task-rest",
+            "criteria": {
+                "SeriesDescription": "EPI_RESTING_STATE"
+            },
+            "sidecar_changes": {
+                "TaskName": "rest"
+            }
+        },
+        {
+            "datatype": "fmap",
+            "suffix": "magnitude1",
+            "criteria": {
+                "SeriesDescription": "gre_field_mapping*",
+                "SidecarFilename": "*_e1.json"
+            },
+            "sidecar_changes": {
+                "IntendedFor": [
+                    "rest"
+                ]
+            }
+        },
+        {
+            "datatype": "fmap",
+            "suffix": "magnitude2",
+            "criteria": {
+                "SeriesDescription": "gre_field_mapping*",
+                "SidecarFilename": "*_e2.json"
+            },
+            "sidecar_changes": {
+                "IntendedFor": [
+                    "rest"
+                ]
+            }
+        },
+        {
+            "datatype": "fmap",
+            "suffix": "phasediff",
+            "criteria": {
+                "SeriesDescription": "gre_field_mapping*",
+                "SidecarFilename": "*_e2_ph.json"
+            },
+            "sidecar_changes": {
+                "IntendedFor": [
+                    "rest"
+                ]
+            }
+        }
+    ]
+}
