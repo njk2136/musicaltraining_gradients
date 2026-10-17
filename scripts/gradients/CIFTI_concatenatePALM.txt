@@ -1,0 +1,28 @@
+## Make file list 
+for i in `seq -f "%04g" 1 206`; do (echo "/vast/iaslab/BANDA/fc_gradients/sub-$i/fc/Z_sub-${i}_corr_RCADS_N204_tfce_FWEp_lh_pos_g1.dscalar.nii" ; cat sublist.txt) >> file.txt; done
+for i in `seq -f "%04g" 1 206`; do (echo "/vast/iaslab/BANDA/fc_gradients/sub-$i/fc/Z_sub-${i}_corr_RCADS_N204_tfce_FWEp_lh_pos_g2.dscalar.nii" ; cat sublist.txt) >> file_posg2.txt; done
+for i in `seq -f "%04g" 1 206`; do (echo "/vast/iaslab/BANDA/fc_gradients/sub-$i/fc/Z_sub-${i}_corr_RCADS_N204_tfce_FWEp_lh_neg_g2.dscalar.nii" ; cat sublist.txt) >> file_negg2.txt; done
+for i in `seq -f "%04g" 1 206`; do (echo "/vast/iaslab/BANDA/fc_gradients/sub-$i/fc/Z_sub-${i}_corr_RCADS_N204_tfce_FWEp_lh_neg_g3.dscalar.nii" ; cat sublist.txt) >> file_negg3.txt; done
+
+#For each gradient - create a file that contains the file paths to all the individual gradient files and read that in as "filearray"
+readarray -t filelist <  G2negSBCfull_rh_patients_082024.txt
+
+#Concatenate all the subject-level gradients into a group level file, and then separate by hemisphere
+wb_shortcuts -cifti-concatenate patients_fullG2neg_rh_conn.dscalar.nii "${filelist[@]}"
+wb_command -cifti-separate patients_fullG2neg_rh_conn.dscalar.nii COLUMN -metric CORTEX_LEFT patients_fullG2negseedRH_L.func.gii -metric CORTEX_RIGHT patients_fullG2negseedRH_R.func.gii
+
+# For each gradient and hemisphere - uncompress the functional gradient files by hemisphere
+wb_command -gifti-convert BASE64_BINARY patients_fullG2negseedRH_L.func.gii patients_fullG2negseedRH_L.func.gii
+wb_command -gifti-convert BASE64_BINARY patients_fullG2negseedRH_R.func.gii patients_fullG2negseedRH_R.func.gii
+
+
+
+wb_command -gifti-convert BASE64_BINARY patients_data_g2_R.func.gii patients_data_g2_compR.func.gii
+wb_command -gifti-convert BASE64_BINARY patients_data_g2_L.func.gii patients_data_g2_compL.func.gii
+
+wb_command -gifti-convert BASE64_BINARY patients_data_g1_R.func.gii patients_data_g1_compR.func.gii
+wb_command -gifti-convert BASE64_BINARY patients_data_g1_L.func.gii patients_data_g1_compL.func.gii
+
+wb_command -cifti-separate groupconn_outputG2.dscalar.nii COLUMN -metric CORTEX_LEFT data_g2pos_L.func.gii -metric CORTEX_RIGHT data_g2pos_R.func.gii
+wb_command -cifti-separate groupconn_outputG2neg.dscalar.nii COLUMN -metric CORTEX_LEFT data_g2neg_L.func.gii -metric CORTEX_RIGHT data_g2neg_R.func.gii
+wb_command -cifti-separate groupconn_outputG3neg.dscalar.nii COLUMN -metric CORTEX_LEFT data_g3neg_L.func.gii -metric CORTEX_RIGHT data_g3neg_R.func.gii

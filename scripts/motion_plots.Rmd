@@ -1,0 +1,70 @@
+---
+title: "motion_plots"
+output: html_document
+date: "2025-02-05"
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+```
+
+
+#read in motion data
+```{r}
+files = list.files(path = "../fmriprep_confounds", pattern = ".*desc-confounds.*\\.tsv$", recursive = TRUE, full.names = TRUE)
+
+          
+comb_df = files %>% 
+    map_dfr(read_tsv, col_types = cols(framewise_displacement = col_number()), .id = "source")
+
+comb_df = mutate(comb_df, 
+                 filename = files[as.numeric(source)])
+
+comb_df = comb_df %>%
+  mutate(subid = gsub('../fmriprep_confounds/', '', filename),
+         subid = gsub("/.*", "", subid))
+
+comb_df = comb_df %>%
+  mutate(sesid = gsub('../fmriprep_confounds/sub-[a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9]/', '', filename),
+        sesid = gsub("/.*", "", sesid))
+```
+
+#descriptive stats
+```{r}
+quantile(comb_df$framewise_displacement, na.rm=TRUE)
+IQR(comb_df$framewise_displacement, na.rm=TRUE)
+
+quantile(comb_df$std_dvars, na.rm=TRUE)
+IQR(comb_df$std_dvars, na.rm=TRUE)
+
+#median per P
+median <- comb_df %>%
+  group_by(subid, sesid) %>%
+  dplyr::summarize(median = median(framewise_displacement, na.rm=TRUE))
+
+mean <- comb_df %>%
+  group_by(subid, sesid) %>%
+  dplyr::summarize(mean = mean(framewise_displacement, na.rm=TRUE))
+
+write.csv(file='../data/mean_motion.csv',mean)
+
+
+
+#get %age above .5
+comb_df$framewise_displacement <- ifelse(is.na(comb_df$framewise_displacement),0,comb_df$framewise_displacement)
+x=1:nrow(comb_df)
+comb_df$outlier <- NA
+for (i in x) {
+  if(comb_df$framewise_displacement[i] > 0.5) {
+      comb_df$outlier[i]=1
+  } else {
+  comb_df$outlier[i]=0
+}
+}
+
+outlier_count <- comb_df %>%
+  group_by(subid,sesid) %>%
+  dplyr::summarize(count = sum(outlier))
+
+outlier_count$percent <- outlier_count$count/180
+```
